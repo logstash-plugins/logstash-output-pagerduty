@@ -11,7 +11,6 @@ require "logstash/json"
 # event details will be populated by Logstash, using `message`, `timestamp` and `host` data.
 class LogStash::Outputs::PagerDuty < LogStash::Outputs::Base
   config_name "pagerduty"
-  milestone 1
 
   # The PagerDuty Service API Key
   config :service_key, :validate => :string, :required => true
