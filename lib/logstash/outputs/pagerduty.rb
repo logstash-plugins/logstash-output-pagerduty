@@ -26,7 +26,7 @@ class LogStash::Outputs::PagerDuty < LogStash::Outputs::Base
 
   # The event details. These might be data from the Logstash event fields you wish to include.
   # Tags are automatically included if detected so there is no need to explicitly add them here.
-  config :details, :validate => :hash, :default => {"timestamp" => "%{@timestamp}", "message" => "%{message}"}
+  config :details, :validate => :hash, :default => {"timestamp" => "%{@timestamp}" "message" => "%{message}"}
 
   # PagerDuty API URL. You shouldn't need to change this, but is included to allow for flexibility
   # should PagerDuty iterate the API and Logstash hasn't been updated yet.
