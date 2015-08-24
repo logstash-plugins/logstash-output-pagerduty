@@ -69,9 +69,8 @@ class LogStash::Outputs::PagerDuty < LogStash::Outputs::Base
       @logger.debug("PD Request", :request => request.inspect)
       response = @client.request(request)
       @logger.debug("PD Response", :response => response.body)
-
     rescue Exception => e
-      @logger.debug("PD Unhandled exception", :pd_error => e.backtrace)
+      @logger.error("PD Unhandled exception", :pd_error => e.backtrace)
     end
   end # def receive
 end # class LogStash::Outputs::PagerDuty
