@@ -48,7 +48,7 @@ class LogStash::Outputs::PagerDuty < LogStash::Outputs::Base
 
   public
   def receive(event)
-    return unless output?(event)
+    
 
     pd_event = Hash.new
     pd_event[:service_key] = "#{@service_key}"
