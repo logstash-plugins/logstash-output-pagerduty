@@ -20,6 +20,7 @@ describe LogStash::Outputs::PagerDuty do
     it "send the event to pagerduty" do
       stub_request(:post, /#{subject.pdurl}/).
         to_return(status: 200, body: "stubbed response", headers: {})
+      expect(logger).to receive(:debug).with("PD Event", instance_of(Hash))
       expect(logger).to receive(:debug).with("PD Response", :response => "stubbed response").once
       expect(logger).to receive(:debug).with("PD Request", kind_of(Hash)).once
       expect(logger).to receive(:debug).with("PD Details added:", kind_of(Hash)).twice
