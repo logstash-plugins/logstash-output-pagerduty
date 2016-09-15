@@ -62,7 +62,7 @@ class LogStash::Outputs::PagerDuty < LogStash::Outputs::Base
     end
     pd_event[:details][:tags] = @tags if @tags
 
-    @logger.info("PD Event", :event => pd_event)
+    @logger.debug("PD Event", :event => pd_event)
     begin
       request = Net::HTTP::Post.new(@pd_uri.path)
       request.body = LogStash::Json.dump(pd_event)
