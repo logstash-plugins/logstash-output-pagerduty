@@ -1,3 +1,6 @@
+## 3.0.5
+  - Fix some documentation issues
+
 ## 3.0.3
   - Reduce logging at info level
 
