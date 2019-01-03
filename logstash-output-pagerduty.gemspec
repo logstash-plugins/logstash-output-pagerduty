@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name            = 'logstash-output-pagerduty'
-  s.version         = '3.0.7'
+  s.version         = '3.0.8'
   s.licenses        = ['Apache License (2.0)']
   s.summary         = "Sends notifications based on preconfigured services and escalation policies"
   s.description     = "This gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gemname. This gem is not a stand-alone program"
@@ -24,6 +24,9 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'logstash-codec-plain'
 
   s.add_development_dependency 'logstash-devutils'
-  s.add_development_dependency 'webmock', '~> 1.21.0'
+
+  # Webmock 3.x requires Ruby >= 2.0, but Logstash 5.x still runs Ruby in 1.9-mode.
+  # Select the 3.x series where compatible, and fall back to webmock 2.2.x when necessary
+  s.add_development_dependency 'webmock', '>=2.2.0', '< 4.0.0'
 end
 

@@ -1,3 +1,6 @@
+## 3.0.8
+ - Update _development_ dependency webmock to latest version to prevent conflicts in logstash core's dependency matrix.
+
 ## 3.0.7
   - Docs: Set the default_codec doc attribute.
 
