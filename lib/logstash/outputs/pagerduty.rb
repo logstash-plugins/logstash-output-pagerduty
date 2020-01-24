@@ -51,7 +51,7 @@ class LogStash::Outputs::PagerDuty < LogStash::Outputs::Base
     
 
     pd_event = Hash.new
-    pd_event[:service_key] = "#{@service_key}"
+    pd_event[:service_key] = event.sprintf(@service_key)
     pd_event[:incident_key] = event.sprintf(@incident_key)
     pd_event[:event_type] = "#{@event_type}"
     pd_event[:description] = event.sprintf(@description)

@@ -1,3 +1,6 @@
+## 3.0.9
+ - Update service key to allow dynamic values.
+
 ## 3.0.8
  - Update _development_ dependency webmock to latest version to prevent conflicts in logstash core's dependency matrix.
 
